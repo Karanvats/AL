@@ -1,0 +1,669 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="NeedHelp.aspx.cs" Inherits="NeedHelp"  EnableEventValidation="false" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <link rel="stylesheet" href="js/style-2.css" />
+     <link rel="stylesheet" href="js/screen.css"/>
+     <link rel="stylesheet" href="js/Style-3.css" />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="/js/jquery.validate.js"></script>
+    <script src="/js/jquery-1.8.2.js"></script>
+         <style>
+             .input-container {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  max-width: 100%;
+}
+
+.inline-label {
+  padding: 10px;
+}
+label{
+    font-weight:400;
+}
+
+/* style that just styles the input */
+.form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 1px;
+  border-top-left-radius: 1px;
+/*  just adds the inset shadow  */
+  background-clip: padding-box;
+  border-width: 1px;
+/*  default styles for the input  */
+  display: block;
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,0.0);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  width: 1.6;
+  height: .32em;
+  padding: 24px 20px 8px;
+  border: solid #d3d3d3;
+  border-width:.02px
+}
+
+select{
+     border: solid  #d3d3d3;
+  border-width:.02px
+}
+
+.textboxborder{
+     border: solid  #d3d3d3;
+  border-width:.02px
+}
+
+.form-control ~ .form-control-label {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform-origin: 0%;
+  -moz-transform-origin: 0%;
+  -ms-transform-origin: 0%;
+  transform-origin: 0%;
+  position: absolute;
+  color: #777;
+  cursor: text; 
+  left: 2px;
+  top: .85em;
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 1px;
+}
+.form-control:focus {
+  color: #008374;
+  outline: none;
+  border: 0px solid #008374;
+  -webkit-box-shadow: 0px 0px 2px 0px #008374;
+  box-shadow: 0px 0px 2px 0px #008374;
+}
+.form-control:focus ~ .form-control-label {
+  color: #008374;
+      will-change: all;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    -webkit-transform: scale(0.5 );
+    -ms-transform: scale(0.5 );
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    top: .086em;
+    max-width: 130%;
+}
+
+.form-control.filled ~ .form-control-label {
+    color: #008374;
+      will-change: all;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    -webkit-transform: scale(0.5 );
+    -ms-transform: scale(0.5 );
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    top: 0.086em;
+    max-width: 130%;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+td{
+    width:1.15em;
+    height:1.55em;
+    border:none;
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-right:10px
+}
+
+
+#_helpQueryForm label {
+		width: 250px;
+	}
+
+#_helpQueryForm label.error, #_helpQueryForm input.submit {
+		margin-left: 253px;
+	}
+
+.inputError{
+    border: solid  #ff0000;
+    border-width:.02px
+}
+
+textboxclass{
+      width:1.95em;
+    height:1.55em;
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-right:10px
+}
+
+.ui-datepicker {
+   background: #333;
+   border: 1px solid #555;
+   color: #EEE;
+ }
+             .auto-style1 {
+                 height: 2em;
+             }
+
+  
+
+    </style>
+
+</head>
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+     <script src"https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.js"></script>
+    <script type="text/javascript">  
+        function Count() {  
+  
+            var i = document.getElementById("_helpQueryAdditionInformation").value.length;
+            document.getElementById("_helpQueryCharCount").innerHTML ="Characters Remaining : "+( 1000 - i);
+
+        }
+
+        function validateForm() {
+            var x = document.forms["_helpQueryForm"]["_helpQueryFirstName"].value
+            if (x == null || x == "") {
+                alert("First name must be filled out");
+                return false;
+            }
+        }
+      
+    </script>  
+
+   
+  
+<body>
+  
+   
+    <div id="HeaderInfo" >
+        <br />
+        <p style="text-align: left">
+            <font color="#008870" face="ARIAL" size="6"><b>How can we help?</b></font>
+        </p>
+    </div>
+        
+    <br />
+    <span  class=" col-xs-12 tealGreenDark">
+       We are sorry you couldn't find the answers to your questions on our website, or make any necessary changes to your booking in  Manage Trip. <br />
+        <br />
+       Please allow up to 48 hours for a response.
+<br /><br />
+        
+        To request other types of assistance please go to:
+        <br />
+         <a href="https://www.aerlingus.com/support/customer-relations/">Disability Assistance </a><br />
+         <a href="https://www.aerlingus.com/support/customer-relations/">Special Meal Request</a><br />
+        <a href="https://www.aerlingus.com/support/customer-relations/">Refund Request</a> <br />
+        <br />
+        
+            Or to update an additional query go to: <br />
+        <a href="Default.aspx"> Update Webform</a>
+            <br />
+       
+      
+    <br />
+    </span>
+   
+    <div id="page1" data-role="page">
+    <form id="_helpQueryForm"  runat="server" autocomplete="off" >
+        <div>
+    
+        <div style="margin-left: 80px; margin-right: 222px;width:auto;height:auto;margin-top:260px"  class="gray-12-bg ">
+            <div style="margin-left: 30px" >
+                 <br />
+              
+                
+      
+                <h2 class="xl2 tealGreen"> Tell Us about Yourself</h2>
+         <table >
+             
+            <tr>
+            <td>
+              <asp:DropDownList  CssClass="btn btn-default dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
+                  <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
+                  <asp:ListItem Text="Mr" Value="Mr" />
+                  <asp:ListItem Text="Mrs" Value="Mrs" />
+                  <asp:ListItem Text="Dr" Value="Dr" />
+                  <asp:ListItem Text="Miss" Value="Miss" />
+
+              </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="SalutationValidator" ControlToValidate="_helpQuerySalutation" InitialValue="Selected" runat="server" />
+              </td>
+                <td>
+                 <div class="input-container" >
+                 <input type="text" style="width:260px" id="helpQueryFirstName" name="helpQueryFirstName"  class="form-control inline-label  " required="required" onblur="checkvalue(this)">
+                    <label class="form-control-label">First Name</label>
+                    </div>
+              </td>
+                <td>
+                <div class="input-container" >
+                 <input type="text" style="width:260px" id="helpQueryLastName" title="Please Enter your Last Name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                 <label class="form-control-label">Last Name</label>
+                </div>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-container" >
+                    <input  type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width:260px"  class="form-control inline-label"  required="required" onblur="checkvalue(this)">
+                    <label class="form-control-label">Email ID</label>
+                    </div>
+               </td>
+            
+            <td >
+                  <div class="input-container" >
+                    <input type="email" name="email" id="email" style="width:260px"  class="form-control inline-label" required="required" onblur="checkvalue(this)" >
+                    <label class="form-control-label">Confirm Email</label>
+                    </div>
+            </td>
+            </tr>
+             <tr>
+             <td>
+                  <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="~/XML DataSource/Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
+                  <div class="input-container" >
+                    <select class="btn btn-default dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px">
+                        
+                        </select>
+                  
+                    </div>
+                 
+             </td>
+             </tr>
+            <tr>
+              
+            <td>
+                <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="~/XML DataSource/CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
+                <asp:DropDownList  CssClass="btn btn-default dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
+                
+               </td>
+                <td>
+                   <div class="input-container" >
+                    <input type="text" style="width:260px"  required pattern="[0-9]{10}" maxlength="10" title="International, national or local phone number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <label class="form-control-label">Telephone Number</label>
+                    </div>
+               
+                
+               
+            </td>
+            </tr>
+             <tr>
+                 <td class="auto-style1">
+                       <select  class="btn btn-default dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server"    >
+                         <option value="Selected" selected="selected">AerClub Status</option>
+                         <option value="Green" >Green</option>
+                          <option value="Silver" >Silver</option>
+                          <option value="Platinum">Platinum</option>
+                          <option value="Concierge" >Concierge</option>
+                       </select>
+
+                 </td>
+                 <td class="auto-style1">
+                    <div class="input-container" >
+                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="width:260px" pattern="[0-9]{16}" title="Please Enter your 16 Digit Membership ID"  disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)">
+                    <label class="form-control-label">AerClub # (16 numeric characters only)</label>
+                    </div>
+                     
+                 </td> 
+             </tr>
+             </table>
+               
+             <table>
+             <tr>
+                 <td>&nbsp</td>
+             </tr>
+          <tr>
+              <td>
+       <font color="#008870" face="ARIAL" size="4">      Travel Information</font>
+                  </td>
+        </tr>
+                <tr>
+                    <td>
+                    <div class="input-container" >
+                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" required pattern="[0-9]{4}"  title="Only numbers Allowed" style="width:260px"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <label class="form-control-label">Flight Number</label>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+                         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                         <script>
+                             $(function () {
+                                 $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
+                                 }
+                              );
+                            </script>
+                    <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Select Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Select Date" runat="server"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
+                <tr>
+                   <td>
+                    <div class="input-container" >
+                    <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase" pattern="[A-Za-z]{6}" maxlength="6" title="Only Characters Allowed" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <label class="form-control-label">Booking Reference #</label>
+                    </div>
+                     
+                    </td>
+                </tr>
+              <tr>
+                 <td>&nbsp</td>
+             </tr>
+             <tr>
+             <td> <font color="#008870" face="ARIAL" size="4"> How can we help ? </font></td>
+            </tr>
+            
+                <tr>
+                    <td>
+                         
+                           <asp:DropDownList CssClass="btn btn-default dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
+                            <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="Need Help" Value="H"></asp:ListItem>
+                            <asp:ListItem Text="Need Information" Value="I"></asp:ListItem>
+                            <asp:ListItem Text="Website Issue" Value="W"></asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Default" runat="server"/>
+                    </td>
+                    <td>
+                   
+                        <select class="btn btn-default dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" >
+                             <option value="Selected" selected="selected">-- Issue Type --</option>
+                        </select>
+                       <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
+                    </td>
+                </tr>
+       <tr>
+            <td> 
+                <font color="#008870" face="ARIAL" size="4" >Comments ?</font>  
+
+            </td>
+       </tr>
+            
+       </table>
+          <p>  Please do not enter any payment card details into any data fields such as credit / debit card numbers and / or security codes. </p>
+        <div>
+            <table>
+                  <tr>
+                <td>
+                    <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="70" Width="300" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
+                    <br />
+                  <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
+                </td>
+                </tr>
+                 <tr><td> Please Upload all the relavant documentation with your request so it can be processed.</td></tr>
+                <tr>
+                    <td>
+
+                        <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>
+                    </td>
+                    <td>
+                           
+                        <asp:FileUpload ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
+                    </td>
+                </tr>
+                <tr><td></td><td><font  face="ARIAL" size="1" >Maximum size limit -2 MB</font></td></tr>
+            </table>
+        </div>
+        
+        <br />
+        <br />
+      
+       <div style="margin-left: 200px;padding:20px" >
+      
+           <asp:Button CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
+        </div>
+            </div>
+            </div>
+            </div>
+    </form>
+   
+  
+    
+   </div> 
+    <div style="margin:80px">
+        
+          
+    </div>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+     <script type="text/javascript">
+     $("#_helpQueryCountryList").change(function () {
+          $("#_helpQueryTelephoneCode").val(this.value);
+         
+      });
+
+      $("#_helpQueryAerClubDropDown").change(function () {
+          if(this.value!="Default")
+          {
+              $("#_helpQueryAerClubmembershipId").attr("disabled", false);
+              ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), true);
+          } else {
+              $("#_helpQueryAerClubmembershipId").attr("disabled", true);
+              ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
+          }
+      });
+
+    
+      setSelect('#_helpQueryCountryList', '/XML DataSource/Countries.xml', 'countries');
+
+      function setSelect(selectid, xmlpath, xmlnode) {
+          var loadingtext = '-- Loading --';
+          var loadinghtml = '<option value="">' + loadingtext + '</option>';
+          var randomno = Math.ceil(Math.random() * 999);
+
+          $(selectid).html(loadinghtml);
+
+          $.ajax({
+              url: xmlpath + '?=rn' + randomno,
+              success: function (xml) {
+                  parseSelectXML(xml, selectid, xmlnode)
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                  alert(xhr.status);
+                  alert(thrownError);
+              }
+          });
+      }
+     
+
+      function parseSelectXML(xml, selectid, xmlnode) {
+          var firstoption = '-- Select Country --';
+          var firsthtml = '<option value="">' + firstoption + '</option>';
+          var selecthtml = '';
+
+          $(xml).find(xmlnode).each(function () {
+            
+              var selecttext = $(this).find('ID').attr('value');
+              var selectvalue = $(this).find('Name').attr('value');
+              selecthtml += '<option value="' + selectvalue + '">' + selecttext + '</option>';
+          });
+
+          $(selectid).html(firsthtml + selecthtml);
+      }
+
+
+
+
+      function IsEmail(email) {
+          var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          if (!regex.test(email)) {
+              return false;
+          } else {
+              return true;
+          }
+      }
+
+      function setSelectQuery(selectid, xmlpath, xmlnode) {
+          var loadingtext = '-- Loading --';
+          var loadinghtml = '<option value="">' + loadingtext + '</option>';
+          var randomno = Math.ceil(Math.random() * 999);
+
+          $(selectid).html(loadinghtml);
+
+          $.ajax({
+              url: xmlpath + '?=rn' + randomno,
+              success: function (xml) {
+                  parseSelectXML1(xml, selectid, xmlnode)
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                  alert(xhr.status);
+                  alert(thrownError);
+              }
+          });
+      }
+
+      function parseSelectXML1(xml, selectid, xmlnode) {
+          var firstoption = '-- Issue Type --';
+          var firsthtml = '<option value="">' + firstoption + '</option>';
+          var selecthtml = '';
+
+          $(xml).find(xmlnode).each(function () {
+
+              var selecttext = $(this).find('ID').attr('value');
+              var selectvalue = $(this).find('ID').attr('value');
+              selecthtml += '<option value="' + selectvalue + '">' + selecttext + '</option>';
+          });
+
+          $(selectid).html(firsthtml + selecthtml);
+      }
+
+      $("#_helpQueryTypeDropDownList").change(function () {
+          if (this.value != "Selected") {
+              $("#_helpQueryDefList").attr("Disabled", false);
+              $("#_requestRefundReasonInfo2").empty();
+          } else {
+              $("#_helpQueryDefList").attr("Disabled", true);
+          }
+
+          if (this.value == "H") {
+              
+              setSelectQuery('#_helpQueryDefList', '/XML DataSource/HelpInfo.xml', 'Info');
+
+             
+          }
+
+          if (this.value == "I") {
+
+              setSelectQuery('#_helpQueryDefList', '/XML DataSource/HelpInfo.xml', 'Description');
+
+
+          }
+          if(this.value == "W")
+          {
+              setSelectQuery('#_helpQueryDefList', '/XML DataSource/HelpInfo.xml', 'WebIssue');
+
+
+          }
+
+         
+      });
+
+    </script>
+                        <script type="text/javascript">
+                            var validFileSize = 2 * 1024 * 1024;
+
+                            function CheckFileSize(file) {
+                                /*global document: false */
+                                var fileSize = file.files[0].size;
+                                var isValidFile = false;
+                                if (fileSize !== 0 && fileSize <= validFileSize) {
+                                    isValidFile = true;
+                                }
+                                else {
+                                    file.value = null;
+                                    alert("File Size Should be Greater than 0 and less than 2 MB.");
+                                }
+                                return isValidFile;
+                            }
+                        </script>
+                            <script type="text/javascript">
+                            function CheckFile(file) {
+                                
+                                    isValidFile = CheckFileSize(file);
+
+                                return isValidFile;
+                            }
+                            function checkvalue(value)
+                            {
+                                var inputelement = document.getElementById(value.id);
+                                if (value.id == "email")
+                                {
+                                    var email = document.getElementById("_helpQueryEmail");
+                                    
+                                    if (inputelement.value != email.value)
+                                    {
+                                       
+                                        alert("Emails do not match");
+                                    }
+                                }
+                                
+                                    if (inputelement.value != "") {
+                                        inputelement.classList.add("filled");
+                                    } else if (inputelement.value == "") {
+                                        inputelement.classList.remove("filled");
+                                    }
+                               
+                            }
+                           
+
+                            $(function () {
+                                $("#_helpQueryForm").validate({
+                                    rules: {
+                                        
+                                        _helpQueryEmail: {
+                                            required: true
+                                        },
+                                        email: {
+                                        required: true,
+                                        equalTo: "#_helpQueryEmail"
+                                             },                                       
+                                        
+                                        helpQueryFirstName: "required",
+                                        helpQueryLastName: "required"
+                                         },
+                                    messages: {
+                                        helpQueryFirstName: "Please enter your firstname",
+                                        helpQueryLastName: "Please enter your lastname",
+                                   
+                                    }
+
+                                });
+                            });
+
+                            $.validator.setDefaults({
+                                submitHandler: function () {
+                                    alert("submitted!");
+                                }
+                            });
+                        </script>
+     
+</body>
+</html>
