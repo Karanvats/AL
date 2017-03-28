@@ -42,7 +42,7 @@ label{
   -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,0.0);
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   width: 1.6;
-  height: .32em;
+  height: .45;
   padding: 24px 20px 8px;
   border: solid #d3d3d3;
   border-width:.02px
@@ -223,7 +223,9 @@ textboxclass{
         <a href="https://www.aerlingus.com/support/customer-relations/">Refund Request</a> <br />
         <br />
         
-            Or to update an additional query go to: <a href="Default.aspx"> Update Webform</a>
+            
+                    Or to update an additional query go to: <a href="Default.aspx"> Update Webform</a>
+
             <br />
        
       
@@ -249,11 +251,12 @@ textboxclass{
                   <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                   <asp:ListItem Text="Mr" Value="Mr" />
                   <asp:ListItem Text="Mrs" Value="Mrs" />
-                  <asp:ListItem Text="Ms" Value="Ms" />
+                   <asp:ListItem Text="Ms" Value="Ms" />
                   <asp:ListItem Text="Dr" Value="Dr" />
+                 
 
               </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="SalutationValidator" ControlToValidate="_helpQuerySalutation" InitialValue="Selected" runat="server" />
+                <asp:RequiredFieldValidator ID="SalutationValidator" ControlToValidate="_helpQuerySalutation" InitialValue="Selected" runat="server" ValidationGroup="Submit"/>
               </td>
                 <td>
                  <div class="input-container" >
@@ -274,6 +277,7 @@ textboxclass{
                     <input  type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width:360px"  class="form-control inline-label"  required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Email ID</label>
                     </div>
+              
                   <div class="input-container" >
                     <input type="email" name="email" id="email" style="width:360px"  class="form-control inline-label" required="required" onblur="checkvalue(this)" >
                     <label class="form-control-label">Confirm Email</label>
@@ -322,7 +326,7 @@ textboxclass{
                  </td>
                  <td class="auto-style1">
                     <div class="input-container" >
-                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="width:260px" pattern="[0-9]{16}" title="Please Enter your 16 Digit Membership ID"  disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)">
+                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display:none;width:260px" pattern="[0-9]{16}" title="Please Enter your 16 Digit Membership ID"  disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)">
                     <label class="form-control-label">AerClub # (16 numeric characters only)</label>
                     </div>
                      
@@ -336,13 +340,14 @@ textboxclass{
              </tr>
           <tr>
               <td>
-                  <h2 class="xl2 tealGreen"> Travel Information</h2>
+                         <h2 class="xl2 tealGreen"> Travel Information</h2>
+
                   </td>
         </tr>
                 <tr>
                     <td>
                     <div class="input-container" >
-                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" required pattern="[0-9]{4}"  title="Only numbers Allowed" style="width:260px"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" required pattern="[a-zA-Z0-9]+"   title="Aplhanumeric Allowed" style="width:260px"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
@@ -365,7 +370,8 @@ textboxclass{
                 <tr>
                    <td>
                     <div class="input-container" >
-                    <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase" pattern="[A-Za-z]{6}" maxlength="6" title="Must Be Alphanumberic" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase" pattern="[a-zA-Z0-9]+" maxlength="6" title="Must Be Alphanumberic" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+
                     <label class="form-control-label">Booking Reference #</label>
                     </div>
                      
@@ -375,7 +381,7 @@ textboxclass{
                  <td>&nbsp</td>
              </tr>
              <tr>
-             <td> <h2 class="xl2 tealGreen"> How Can We Help?</h2></td>
+             <td> <font color="#008870" face="ARIAL" size="4"> How can we help ? </font></td>
             </tr>
             
                 <tr>
@@ -398,40 +404,43 @@ textboxclass{
                     </td>
                 </tr>
        <tr>
-            <td>&nbsp</td>
+                       <td>&nbsp</td>
         </tr>
         <tr>
+
             <td> 
-                <h2 class="xl2 tealGreen"> Comments</h2>  
+                             <h2 class="xl2 tealGreen"> Comments</h2>  
+
 
             </td>
        </tr>
             
        </table>
-          <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
+          <p>  Please do not enter any payment card details into any data fields such as credit / debit card numbers and / or security codes. </p>
         <div>
-            <table width="100%">
+            <table>
                   <tr>
-                	<td>
-                    	<asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
-                    	<br />
-                  	<font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
-                	</td>
+                <td>
+              <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="500" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
+
+                    <br />
+                  <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
+                </td>
                 </tr>
+                 <tr><td colspan="3"> Please Upload all the relavant documentation with your request so it can be processed.</td></tr>
+
                 <tr>
-			<td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td>
-		</tr>
-                <tr>
-                    <td colspan="2">
+                    <td>
 
                         <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>
+                    </td>
+                    <td>
                            
-                        <asp:FileUpload ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
+          <asp:FileUpload CssClass="button button-standard button-shamrockGreen-gradient" ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
+
                     </td>
                 </tr>
-                <tr>
-			<td><font  face="ARIAL" size="1" >Maximum size limit -2 MB</font></td>
-		</tr>
+                <tr><td></td><td><font  face="ARIAL" size="1" >Maximum size limit -2 MB</font></td></tr>
             </table>
         </div>
         
@@ -462,12 +471,14 @@ textboxclass{
       });
 
       $("#_helpQueryAerClubDropDown").change(function () {
-          if(this.value!="Default")
+          if(this.value!="Selected")
           {
               $("#_helpQueryAerClubmembershipId").attr("disabled", false);
+              $("#_helpQueryAerClubmembershipId").show();
               ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), true);
           } else {
               $("#_helpQueryAerClubmembershipId").attr("disabled", true);
+              $("#_helpQueryAerClubmembershipId").hide();
               ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
           }
       });
@@ -542,7 +553,7 @@ textboxclass{
       }
 
       function parseSelectXML1(xml, selectid, xmlnode) {
-          var firstoption = '-- Please Select --';
+          var firstoption = '-- Issue Type --';
           var firsthtml = '<option value="">' + firstoption + '</option>';
           var selecthtml = '';
 
@@ -566,14 +577,14 @@ textboxclass{
 
           if (this.value == "H") {
               
-              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Description');
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Info');
 
              
           }
 
           if (this.value == "I") {
 
-              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Info');
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Description');
 
 
           }
