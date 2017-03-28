@@ -392,7 +392,7 @@ textboxclass{
                     <td>
                    
                         <select class="btn btn-default dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" >
-                             <option value="Selected" selected="selected">-- Issue Type --</option>
+                             <option value="Selected" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
                     </td>
@@ -408,26 +408,30 @@ textboxclass{
        </tr>
             
        </table>
-          <p>  Please do not enter any payment card details into any data fields such as credit / debit card numbers and / or security codes. </p>
+          <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
         <div>
-            <table>
+            <table width="100%">
                   <tr>
-                <td>
-                    <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="500" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
-                    <br />
-                  <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
-                </td>
+                	<td>
+                    	<asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
+                    	<br />
+                  	<font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
+                	</td>
                 </tr>
-                 <tr><td colspan="3"> Please Upload all the relavant documentation with your request so it can be processed.</td></tr>
                 <tr>
-                    <td colspan="3">
+			<td colspan="3"> Please Upload all the relevant documentation with your request so it can be processed.</td>
+		</tr>
+                <tr>
+                    <td colspan="2">
 
                         <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>
                            
-                        <asp:FileUpload CssClass="button button-standard button-shamrockGreen-gradient" ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
+                        <asp:FileUpload ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
                     </td>
                 </tr>
-                <tr><td></td><td><font  face="ARIAL" size="1" >Maximum size limit -2 MB</font></td></tr>
+                <tr>
+			<td><font  face="ARIAL" size="1" >Maximum size limit -2 MB</font></td>
+		</tr>
             </table>
         </div>
         
@@ -538,7 +542,7 @@ textboxclass{
       }
 
       function parseSelectXML1(xml, selectid, xmlnode) {
-          var firstoption = '-- Issue Type --';
+          var firstoption = '-- Please Select --';
           var firsthtml = '<option value="">' + firstoption + '</option>';
           var selecthtml = '';
 
