@@ -235,7 +235,7 @@ textboxclass{
     <form id="_helpQueryForm"  runat="server" autocomplete="off" >
         <div>
     
-        <div style="margin-left: 80px; margin-right: 222px;width:auto;height:auto;margin-top:260px"  class="gray-12-bg ">
+        <div style="margin-left: 80px; margin-right: 172px;width:auto;height:auto;margin-top:260px"  class="gray-12-bg ">
             <div style="margin-left: 30px" >
                  <br />
               
@@ -250,8 +250,8 @@ textboxclass{
                   <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                   <asp:ListItem Text="Mr" Value="Mr" />
                   <asp:ListItem Text="Mrs" Value="Mrs" />
+                  <asp:ListItem Text="Ms" Value="Ms" />
                   <asp:ListItem Text="Dr" Value="Dr" />
-                  <asp:ListItem Text="Miss" Value="Miss" />
 
               </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="SalutationValidator" ControlToValidate="_helpQuerySalutation" InitialValue="Selected" runat="server" />
@@ -270,23 +270,20 @@ textboxclass{
             </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="3">
                     <div class="input-container" >
-                    <input  type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width:260px"  class="form-control inline-label"  required="required" onblur="checkvalue(this)">
+                    <input  type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width:360px"  class="form-control inline-label"  required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Email ID</label>
                     </div>
-               </td>
-            
-            <td >
                   <div class="input-container" >
-                    <input type="email" name="email" id="email" style="width:260px"  class="form-control inline-label" required="required" onblur="checkvalue(this)" >
+                    <input type="email" name="email" id="email" style="width:360px"  class="form-control inline-label" required="required" onblur="checkvalue(this)" >
                     <label class="form-control-label">Confirm Email</label>
                     </div>
             </td>
             </tr>
              <tr>
              <td>
-                  <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="~/XML DataSource/Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
+                  <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
                   <div class="input-container" >
                     <select class="btn btn-default dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px">
                         
@@ -427,7 +424,7 @@ textboxclass{
                     </td>
                     <td>
                            
-                        <asp:FileUpload ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
+                        <asp:FileUpload CssClass="button button-standard button-shamrockGreen-gradient" ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
                     </td>
                 </tr>
                 <tr><td></td><td><font  face="ARIAL" size="1" >Maximum size limit -2 MB</font></td></tr>
@@ -472,7 +469,7 @@ textboxclass{
       });
 
     
-      setSelect('#_helpQueryCountryList', '/XML DataSource/Countries.xml', 'countries');
+      setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
 
       function setSelect(selectid, xmlpath, xmlnode) {
           var loadingtext = '-- Loading --';
@@ -495,7 +492,7 @@ textboxclass{
      
 
       function parseSelectXML(xml, selectid, xmlnode) {
-          var firstoption = '-- Select Country --';
+          var firstoption = 'Select Country';
           var firsthtml = '<option value="">' + firstoption + '</option>';
           var selecthtml = '';
 
@@ -565,20 +562,20 @@ textboxclass{
 
           if (this.value == "H") {
               
-              setSelectQuery('#_helpQueryDefList', '/XML DataSource/HelpInfo.xml', 'Info');
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Info');
 
              
           }
 
           if (this.value == "I") {
 
-              setSelectQuery('#_helpQueryDefList', '/XML DataSource/HelpInfo.xml', 'Description');
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Description');
 
 
           }
           if(this.value == "W")
           {
-              setSelectQuery('#_helpQueryDefList', '/XML DataSource/HelpInfo.xml', 'WebIssue');
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'WebIssue');
 
 
           }

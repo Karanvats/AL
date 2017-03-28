@@ -113,7 +113,7 @@ public partial class NeedHelp : System.Web.UI.Page
         SmtpClient SMTPServer = new SmtpClient("smtp.gmail.com");
         SMTPServer.Credentials = new NetworkCredential("vats.karan@gmail.com", "indu@1984");
         SMTPServer.Port = 587;
-        SMTPServer.DeliveryFormat = SmtpDeliveryFormat.International;
+        //SMTPServer.DeliveryFormat = SmtpDeliveryFormat.International;
         SMTPServer.EnableSsl = true;
         AlternateView PlainText;
         PlainText = AlternateView.CreateAlternateViewFromString(_messgebody, null, "text/plain");
