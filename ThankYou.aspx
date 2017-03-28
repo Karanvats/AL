@@ -21,9 +21,9 @@
                     <td><img src="/images/right-check-mark.jpg" style="width: 102px; height: 69px" /> </td>
                     <td>
                         <div id="BlockText" style="text-align: left; width:430;color:green">
-                Refund Request Sent Successfully<br />
+                Request Sent Successfully<br />
                 Thank you.<br />
-                Your Refund Request has been sent successfully</div>
+                Your  Request has been sent successfully</div>
         </div>
                     </td>
                 </tr>

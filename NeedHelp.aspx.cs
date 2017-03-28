@@ -109,11 +109,7 @@ public partial class NeedHelp : System.Web.UI.Page
         }
 
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
-        //SmtpClient SMTPServer = new SmtpClient();
-        SmtpClient SMTPServer = new SmtpClient("smtp.gmail.com");
-        SMTPServer.Credentials = new NetworkCredential("vats.karan@gmail.com", "indu@1984");
-        SMTPServer.Port = 587;
-        //SMTPServer.DeliveryFormat = SmtpDeliveryFormat.International;
+        SmtpClient SMTPServer = new SmtpClient();
         SMTPServer.EnableSsl = true;
         AlternateView PlainText;
         PlainText = AlternateView.CreateAlternateViewFromString(_messgebody, null, "text/plain");
@@ -129,8 +125,8 @@ public partial class NeedHelp : System.Web.UI.Page
         try
         {
             SMTPServer.Send(_helpMessage);
-
-                Response.Redirect("ThankYou.aspx");
+            Response.Redirect("ThankYou.aspx");
+           
 
             _helpMessage.Dispose();
         }
