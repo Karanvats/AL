@@ -8,12 +8,15 @@
     <ID value="Request a Receipt"></ID>
   </Description>
   <Description >
-    <ID value="Resent Email Confirmation"></ID>
+    <ID value="Resend Email Confirmation"></ID>
   </Description>
   <Description>
     <ID value="Add Frequent Flyer Number"></ID>
   </Description>
   
+  <Info >
+    <ID value="What's my baggage allowance"></ID>
+  </Info>
   <Info >
     <ID value="What are your Fare Rules"></ID>
   </Info>

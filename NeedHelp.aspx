@@ -336,7 +336,7 @@ textboxclass{
              </tr>
           <tr>
               <td>
-       <font color="#008870" face="ARIAL" size="4">      Travel Information</font>
+                  <h2 class="xl2 tealGreen"> Travel Information</h2>
                   </td>
         </tr>
                 <tr>
@@ -365,7 +365,7 @@ textboxclass{
                 <tr>
                    <td>
                     <div class="input-container" >
-                    <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase" pattern="[A-Za-z]{6}" maxlength="6" title="Only Characters Allowed" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase" pattern="[A-Za-z]{6}" maxlength="6" title="Must Be Alphanumberic" class="form-control inline-label" required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Booking Reference #</label>
                     </div>
                      
@@ -375,7 +375,7 @@ textboxclass{
                  <td>&nbsp</td>
              </tr>
              <tr>
-             <td> <font color="#008870" face="ARIAL" size="4"> How can we help ? </font></td>
+             <td> <h2 class="xl2 tealGreen"> How Can We Help?</h2></td>
             </tr>
             
                 <tr>
@@ -398,8 +398,11 @@ textboxclass{
                     </td>
                 </tr>
        <tr>
+            <td>&nbsp</td>
+        </tr>
+        <tr>
             <td> 
-                <font color="#008870" face="ARIAL" size="4" >Comments ?</font>  
+                <h2 class="xl2 tealGreen"> Comments</h2>  
 
             </td>
        </tr>
@@ -410,18 +413,16 @@ textboxclass{
             <table>
                   <tr>
                 <td>
-                    <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="70" Width="300" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
+                    <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="500" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
                     <br />
                   <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
                 </td>
                 </tr>
-                 <tr><td> Please Upload all the relavant documentation with your request so it can be processed.</td></tr>
+                 <tr><td colspan="3"> Please Upload all the relavant documentation with your request so it can be processed.</td></tr>
                 <tr>
-                    <td>
+                    <td colspan="3">
 
                         <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>
-                    </td>
-                    <td>
                            
                         <asp:FileUpload CssClass="button button-standard button-shamrockGreen-gradient" ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
                     </td>
@@ -561,14 +562,14 @@ textboxclass{
 
           if (this.value == "H") {
               
-              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Info');
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Description');
 
              
           }
 
           if (this.value == "I") {
 
-              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Description');
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Info');
 
 
           }
