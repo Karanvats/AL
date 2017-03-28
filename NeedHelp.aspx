@@ -223,8 +223,7 @@ textboxclass{
         <a href="https://www.aerlingus.com/support/customer-relations/">Refund Request</a> <br />
         <br />
         
-            Or to update an additional query go to: <br />
-        <a href="Default.aspx"> Update Webform</a>
+            Or to update an additional query go to: <a href="Default.aspx"> Update Webform</a>
             <br />
        
       

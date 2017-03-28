@@ -129,20 +129,8 @@ public partial class NeedHelp : System.Web.UI.Page
         try
         {
             SMTPServer.Send(_helpMessage);
-            string sThankYouRedirect;
-            if (selectedCountry == "USA")
-                //
-  sThankYouRedirect = ConfigurationManager.AppSettings["USAThankYouPage"];
-            else
-                sThankYouRedirect = ConfigurationManager.AppSettings["OtherThankYouPage"];
 
-            if (sThankYouRedirect.Length == 0)
-            {
-              //  hidden.SelectedIndex = 1;
                 Response.Redirect("ThankYou.aspx");
-            }
-            else
-                Response.Redirect(sThankYouRedirect);
 
             _helpMessage.Dispose();
         }
