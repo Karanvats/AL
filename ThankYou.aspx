@@ -38,29 +38,37 @@ span{
 }
 
 
-</style>
+        .auto-style1 {
+            width: 28px;
+        }
+        .auto-style2 {
+            width: 432px;
+        }
+
+
+    </style>
 </head>
     <body style="align-items:center">
-        <div  style="align-content:center;width:600px;height:150px;border:2px solid #73AD21 ; border-radius:10px;align-content:center">
+        <div  style="align-content:center;width:600px;height:150px;border:2px solid #73AD21 ; background-color:#f0f0f0;border-radius:10px;align-content:center">
             <table>
                 <tr><td>
             <table >
                 <tr>
-                    <td style="margin:5px">
-                        <asp:Image ImageUrl="~/Images/right-check-mark.jpg" width="130px" height="136px"    runat="server"></asp:Image>
+                    <td style="padding:10px">
+                        <asp:Image ImageUrl="~/Images/RightImage.png" width="125px" height="130px"    runat="server"></asp:Image>
 
                     </td>
                     <td>
                         <table >
-                            <tr><td ><span class="tealGreen xl">Help Request Sent</span></td></tr>
-                            <tr><td><span class="tealGreen xl">Thank You</span></td></tr>
-                            <tr><td><span class="tealGreen xl">Your Help Request has been Sent Successfully</span></td></tr>
+                            <tr><td style="padding-bottom:20px" class="auto-style2" ><span class="tealGreen xxl">Help Request Sent Successfully</span></td></tr>
+                            <tr><td class="auto-style2" style="padding-bottom:20px"><span class="tealGreen xsmall-table">Thank You</span></td></tr>
+                            <tr><td class="auto-style2" style="padding-bottom:20px"><span class="tealGreen xsmall-table">Your Help Request has been Sent Successfully</span></td></tr>
                         </table>
                     </td>
                    
                     </tr>
             </table>
-                    </td><td  style="vertical-align:top;"><a id="crossbutton" href="NeedHelp.aspx" style="margin:8px;width:20px;height:20px">&#10006;</a></td></tr>
+                    </td><td  style="vertical-align:top;" class="auto-style1"><a id="crossbutton" href="NeedHelp.aspx" style="margin:8px;width:20px;height:20px">&#10006;</a></td></tr>
                 </table>
              
         </div>

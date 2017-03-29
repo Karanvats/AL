@@ -333,7 +333,7 @@ textboxclass{
                  </td>
                  <td class="auto-style1">
                     <div class="input-container" >
-                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display:none;width:260px" pattern="[0-9]{16}" title="Please Enter your 16 Digit Membership ID"  disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)">
+                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display:none;width:260px" pattern="[0-9]{16}" required title="Please Enter your 16 Digit Membership ID"  disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)">
                     <label class="form-control-label">AerClub # (16 numeric characters only)</label>
                     </div>
                      
@@ -354,7 +354,7 @@ textboxclass{
                 <tr>
                     <td>
                     <div class="input-container" >
-                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" required pattern="[a-zA-Z0-9]+"   title="Aplhanumeric Allowed" style="width:260px"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" required pattern="^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$"   title="Aplhanumeric Allowed" style="width:260px"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
@@ -377,7 +377,7 @@ textboxclass{
                 <tr>
                    <td>
                     <div class="input-container" >
-                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{6}$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase" pattern="^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$" maxlength="6" title="Must Be Alphanumberic" class="form-control inline-label" required="required" onblur="checkvalue(this)">
 
                     <label class="form-control-label">Booking Reference #</label>
                     </div>
@@ -453,7 +453,7 @@ textboxclass{
       
        <div style="margin-left: 200px;padding:20px" >
       
-           <asp:Button CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
+           <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
         </div>
             </div>
             </div>
@@ -638,6 +638,10 @@ textboxclass{
                                     {
                                        
                                         alert("Emails do not match");
+                                        $("#Submitbtn").attr("disabled", true);
+
+                                    } else {
+                                        $("#Submitbtn").attr("disabled", false);
                                     }
                                 }
                                 
