@@ -556,7 +556,7 @@ textboxclass{
       }
 
       function parseSelectXML1(xml, selectid, xmlnode) {
-          var firstoption = '-- Issue Type --';
+          var firstoption = '-- Please Select --';
           var firsthtml = '<option value="">' + firstoption + '</option>';
           var selecthtml = '';
 
