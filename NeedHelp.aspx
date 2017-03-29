@@ -433,7 +433,7 @@ textboxclass{
                   <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
                 </td>
                 </tr>
-                 <tr><td colspan="3"> Please Upload all the relevant documentation with your request so it can be processed.</td></tr>
+                 <tr><td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td></tr>
 
                 <tr>
                     <td colspan="3">
