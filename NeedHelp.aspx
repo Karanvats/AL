@@ -395,8 +395,8 @@ textboxclass{
                          
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
                             <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
-                            <asp:ListItem Text="Need Help" Value="H"></asp:ListItem>
-                            <asp:ListItem Text="Need Information" Value="I"></asp:ListItem>
+                            <asp:ListItem Text="Need Help" Value="I"></asp:ListItem>
+                            <asp:ListItem Text="Need Information" Value="H"></asp:ListItem>
                             <asp:ListItem Text="Website Issue" Value="W"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Default" runat="server"/>
