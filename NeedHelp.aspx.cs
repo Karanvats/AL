@@ -41,11 +41,11 @@ public partial class NeedHelp : System.Web.UI.Page
         string lsFormIdBuild = _FormID;
         //use this if we need to split mailboxes or IDs for processing.
         //form IDs are identical for both on deploy 3/29/2017
-        if (lsFormIdBuild == "USA")
+        if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
         {
             sEmailFormId1 = ConfigurationManager.AppSettings["USANeedHelpFormId1"];
             sEmailFormId2 = ConfigurationManager.AppSettings["USANeedHelpFormId2"];
-            sUSAorOther = "USA";
+            sUSAorOther = "NA";
         
         }
         else
