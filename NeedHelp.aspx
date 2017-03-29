@@ -126,6 +126,12 @@ select{
     top: 0.086em;
     max-width: 130%;
 }
+select {
+    direction: ltr;
+    color:#555;
+    padding-top: 4px;
+
+}
 
 label {
   display: inline-block;
@@ -247,7 +253,7 @@ textboxclass{
              
             <tr>
             <td>
-              <asp:DropDownList  CssClass="btn btn-default dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
+              <asp:DropDownList  CssClass="dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
                   <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                   <asp:ListItem Text="Mr" Value="Mr" />
                   <asp:ListItem Text="Mrs" Value="Mrs" />
@@ -288,7 +294,7 @@ textboxclass{
              <td>
                   <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
                   <div class="input-container" >
-                    <select class="btn btn-default dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px">
+                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left">
                         
                         </select>
                   
@@ -300,7 +306,7 @@ textboxclass{
               
             <td>
                 <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="~/XML DataSource/CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
-                <asp:DropDownList  CssClass="btn btn-default dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
+                <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
                 
                </td>
                 <td>
@@ -315,7 +321,7 @@ textboxclass{
             </tr>
              <tr>
                  <td class="auto-style1">
-                       <select  class="btn btn-default dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server"    >
+                       <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server"    >
                          <option value="Selected" selected="selected">AerClub Status</option>
                          <option value="Green" >Green</option>
                           <option value="Silver" >Silver</option>
@@ -387,7 +393,7 @@ textboxclass{
                 <tr>
                     <td>
                          
-                           <asp:DropDownList CssClass="btn btn-default dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
+                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
                             <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Need Help" Value="H"></asp:ListItem>
                             <asp:ListItem Text="Need Information" Value="I"></asp:ListItem>
@@ -397,7 +403,7 @@ textboxclass{
                     </td>
                     <td>
                    
-                        <select class="btn btn-default dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" >
+                        <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" >
                              <option value="Selected" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
