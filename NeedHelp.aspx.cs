@@ -45,14 +45,14 @@ public partial class NeedHelp : System.Web.UI.Page
         {
             sEmailFormId1 = ConfigurationManager.AppSettings["USANeedHelpFormId1"];
             sEmailFormId2 = ConfigurationManager.AppSettings["USANeedHelpFormId2"];
-            sUSAorOther = "USA"
+            sUSAorOther = "USA";
         
         }
         else
         {
             sEmailFormId1 = ConfigurationManager.AppSettings["OthersNeedHelpFormId1"];
             sEmailFormId2 = ConfigurationManager.AppSettings["OthersNeedHelpFormId2"];
-            sUSAorOther = "Other"
+            sUSAorOther = "Other";
            
         }
 
