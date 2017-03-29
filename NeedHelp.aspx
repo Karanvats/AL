@@ -43,7 +43,7 @@ label{
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   width: 1.6;
   height: .45;
-  padding: 24px 20px 8px;
+  padding: 24px 2px 8px;
   border: solid #d3d3d3;
   border-width:.02px
 }
@@ -55,6 +55,7 @@ select{
 
 .textboxborder{
      border: solid  #d3d3d3;
+     color: #777;
   border-width:.02px
 }
 
