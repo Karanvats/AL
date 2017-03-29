@@ -72,6 +72,7 @@ public partial class NeedHelp : System.Web.UI.Page
         sbBodyTextString.AppendLine("PassengerTitle: " + _helpQuerySalutation.SelectedValue.ToString());
         sbBodyTextString.AppendLine("Passenger Given Name: " +Request.Form["helpQueryFirstName"]);
         sbBodyTextString.AppendLine("Passenger Last Name: " + Request.Form["helpQueryLastName"]);
+        sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
         string countrycode = _helpQueryTelephoneCode.SelectedValue;
         sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
         char[] delimiterChars = {  '(', ')' };
