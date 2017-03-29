@@ -387,7 +387,7 @@ textboxclass{
                  <td>&nbsp</td>
              </tr>
              <tr>
-             <td> <font color="#008870" face="ARIAL" size="4"> How can we help ? </font></td>
+             <td> <h2 class="xl2 tealGreen"> How can we help ? </h2</td>
             </tr>
             
                 <tr>
@@ -427,7 +427,7 @@ textboxclass{
             <table>
                   <tr>
                 <td>
-              <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="500" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
+              <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
 
                     <br />
                   <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
@@ -436,14 +436,11 @@ textboxclass{
                  <tr><td colspan="3"> Please Upload all the relavant documentation with your request so it can be processed.</td></tr>
 
                 <tr>
-                    <td>
+                    <td colspan="3">
 
                         <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>
-                    </td>
-                    <td>
                            
-          <asp:FileUpload CssClass="button button-standard button-shamrockGreen-gradient" ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
-
+                        <asp:FileUpload ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
                     </td>
                 </tr>
                 <tr><td></td><td><font  face="ARIAL" size="1" >Maximum size limit -2 MB</font></td></tr>
