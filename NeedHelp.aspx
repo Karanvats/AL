@@ -377,7 +377,7 @@ textboxclass{
                 <tr>
                    <td>
                     <div class="input-container" >
-                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{6}$" maxlength="6" title="Must Be Alphanumberic" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{6}$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label" required="required" onblur="checkvalue(this)">
 
                     <label class="form-control-label">Booking Reference #</label>
                     </div>
