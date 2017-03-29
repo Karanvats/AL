@@ -110,6 +110,7 @@ public partial class NeedHelp : System.Web.UI.Page
 
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
         SmtpClient SMTPServer = new SmtpClient();
+        SMTPServer.UseDefaultCredentials = true;
         SMTPServer.EnableSsl = true;
         AlternateView PlainText;
         PlainText = AlternateView.CreateAlternateViewFromString(_messgebody, null, "text/plain");
