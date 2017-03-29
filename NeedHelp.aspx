@@ -433,7 +433,7 @@ textboxclass{
                   <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
                 </td>
                 </tr>
-                 <tr><td colspan="3"> Please Upload all the relavant documentation with your request so it can be processed.</td></tr>
+                 <tr><td colspan="3"> Please Upload all the relevant documentation with your request so it can be processed.</td></tr>
 
                 <tr>
                     <td colspan="3">
@@ -443,7 +443,7 @@ textboxclass{
                         <asp:FileUpload ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
                     </td>
                 </tr>
-                <tr><td></td><td><font  face="ARIAL" size="1" >Maximum size limit -2 MB</font></td></tr>
+                <tr><td><font  face="ARIAL" size="1" >Maximum size limit 2 MB</font></td></tr>
             </table>
         </div>
         
