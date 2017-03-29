@@ -43,7 +43,7 @@ label{
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   width: 1.6;
   height: .45;
-  padding: 24px 20px 8px;
+  padding: 24px 2px 8px;
   border: solid #d3d3d3;
   border-width:.02px
 }
@@ -55,6 +55,7 @@ select{
 
 .textboxborder{
      border: solid  #d3d3d3;
+     color: #777;
   border-width:.02px
 }
 
@@ -125,6 +126,12 @@ select{
     transform: scale(0.5);
     top: 0.086em;
     max-width: 130%;
+}
+select {
+    direction: ltr;
+    color:#555;
+    padding-top: 4px;
+
 }
 
 label {
@@ -247,7 +254,7 @@ textboxclass{
              
             <tr>
             <td>
-              <asp:DropDownList  CssClass="btn btn-default dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
+              <asp:DropDownList  CssClass="dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
                   <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                   <asp:ListItem Text="Mr" Value="Mr" />
                   <asp:ListItem Text="Mrs" Value="Mrs" />
@@ -288,7 +295,7 @@ textboxclass{
              <td>
                   <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
                   <div class="input-container" >
-                    <select class="btn btn-default dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px">
+                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left">
                         
                         </select>
                   
@@ -300,7 +307,7 @@ textboxclass{
               
             <td>
                 <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="~/XML DataSource/CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
-                <asp:DropDownList  CssClass="btn btn-default dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
+                <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
                 
                </td>
                 <td>
@@ -315,7 +322,7 @@ textboxclass{
             </tr>
              <tr>
                  <td class="auto-style1">
-                       <select  class="btn btn-default dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server"    >
+                       <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server"    >
                          <option value="Selected" selected="selected">AerClub Status</option>
                          <option value="Green" >Green</option>
                           <option value="Silver" >Silver</option>
@@ -381,23 +388,23 @@ textboxclass{
                  <td>&nbsp</td>
              </tr>
              <tr>
-             <td> <font color="#008870" face="ARIAL" size="4"> How can we help ? </font></td>
+             <td> <h2 class="xl2 tealGreen"> How can we help ? </h2</td>
             </tr>
             
                 <tr>
                     <td>
                          
-                           <asp:DropDownList CssClass="btn btn-default dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
+                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
                             <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
-                            <asp:ListItem Text="Need Help" Value="H"></asp:ListItem>
-                            <asp:ListItem Text="Need Information" Value="I"></asp:ListItem>
+                            <asp:ListItem Text="Need Help" Value="I"></asp:ListItem>
+                            <asp:ListItem Text="Need Information" Value="H"></asp:ListItem>
                             <asp:ListItem Text="Website Issue" Value="W"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Default" runat="server"/>
                     </td>
                     <td>
                    
-                        <select class="btn btn-default dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" >
+                        <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" >
                              <option value="Selected" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
@@ -421,26 +428,23 @@ textboxclass{
             <table>
                   <tr>
                 <td>
-              <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="500" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
+              <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
 
                     <br />
                   <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
                 </td>
                 </tr>
-                 <tr><td colspan="3"> Please Upload all the relavant documentation with your request so it can be processed.</td></tr>
+                 <tr><td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td></tr>
 
                 <tr>
-                    <td>
+                    <td colspan="3">
 
                         <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>
-                    </td>
-                    <td>
                            
-          <asp:FileUpload CssClass="button button-standard button-shamrockGreen-gradient" ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
-
+                        <asp:FileUpload ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
                     </td>
                 </tr>
-                <tr><td></td><td><font  face="ARIAL" size="1" >Maximum size limit -2 MB</font></td></tr>
+                <tr><td><font  face="ARIAL" size="1" >Maximum size limit 2 MB</font></td></tr>
             </table>
         </div>
         
@@ -553,7 +557,7 @@ textboxclass{
       }
 
       function parseSelectXML1(xml, selectid, xmlnode) {
-          var firstoption = '-- Issue Type --';
+          var firstoption = '-- Please Select --';
           var firsthtml = '<option value="">' + firstoption + '</option>';
           var selecthtml = '';
 

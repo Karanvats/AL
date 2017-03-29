@@ -35,23 +35,37 @@ public partial class NeedHelp : System.Web.UI.Page
     protected string BuildMessageBody(string _FormID)
     {
         
-        string sEmailFormId;
+        string sEmailFormId1;
+        string sEmailFormId2;
         string lsFormIdBuild = _FormID;
+        //use this if we need to split mailboxes or IDs for processing.
+        //form IDs are identical for both on deploy 3/29/2017
         if (lsFormIdBuild == "USA")
         {
-            sEmailFormId = ConfigurationManager.AppSettings["USANeedHelpFormId"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["USANeedHelpFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["USANeedHelpFormId2"];
            
         }
         else
         {
-            sEmailFormId = ConfigurationManager.AppSettings["OthersNeedHelpFormId"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["OthersNeedHelpFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["OthersNeedHelpFormId2"];
            
         }
 
         
         StringBuilder sbBodyTextString = new StringBuilder();
-        sbBodyTextString.AppendLine("EmailFormId: " + sEmailFormId);
+        //splitting this into 2. Pre-processing and when pulled from queue
+        sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
+        sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
+        sbBodyTextString.AppendLine("Request Number: " + Request.Form["_helpQueryFlightNumber"]);
+        sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
+        sbBodyTextString.AppendLine("Query Type: " + _helpQueryTypeDropDownList.SelectedItem.ToString());
+        sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
+
+        //starting part 2
+        sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
         sbBodyTextString.AppendLine("PassengerTitle: " + _helpQuerySalutation.SelectedValue.ToString());
         sbBodyTextString.AppendLine("Passenger Given Name: " +Request.Form["helpQueryFirstName"]);
         sbBodyTextString.AppendLine("Passenger Last Name: " + Request.Form["helpQueryLastName"]);
@@ -72,11 +86,7 @@ public partial class NeedHelp : System.Web.UI.Page
 
         }
 
-        sbBodyTextString.AppendLine("Request Number: " + Request.Form["_helpQueryFlightNumber"]);
-        sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
-        sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
-        sbBodyTextString.AppendLine("Query Type: " + _helpQueryTypeDropDownList.SelectedItem.ToString());
-        sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
+
         sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text.ToString());
 
 
@@ -95,8 +105,7 @@ public partial class NeedHelp : System.Web.UI.Page
       
         string selectedCountry = Request.Form["_helpQueryCountryList"];
         MailMessage _helpMessage = new MailMessage();
-        //_helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
-        _helpMessage.From = new MailAddress("vats.karan@gmail.com");
+        _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
         if (Request.Form["_helpQueryCountryList"] == "USA")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
@@ -110,7 +119,6 @@ public partial class NeedHelp : System.Web.UI.Page
 
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
         SmtpClient SMTPServer = new SmtpClient();
-        SMTPServer.EnableSsl = true;
         AlternateView PlainText;
         PlainText = AlternateView.CreateAlternateViewFromString(_messgebody, null, "text/plain");
         _helpMessage.AlternateViews.Add(PlainText);
