@@ -37,6 +37,7 @@ public partial class NeedHelp : System.Web.UI.Page
         
         string sEmailFormId1;
         string sEmailFormId2;
+        string sUSAorOther;
         string lsFormIdBuild = _FormID;
         //use this if we need to split mailboxes or IDs for processing.
         //form IDs are identical for both on deploy 3/29/2017
@@ -44,12 +45,14 @@ public partial class NeedHelp : System.Web.UI.Page
         {
             sEmailFormId1 = ConfigurationManager.AppSettings["USANeedHelpFormId1"];
             sEmailFormId2 = ConfigurationManager.AppSettings["USANeedHelpFormId2"];
-           
+            sUSAorOther = "USA"
+        
         }
         else
         {
             sEmailFormId1 = ConfigurationManager.AppSettings["OthersNeedHelpFormId1"];
             sEmailFormId2 = ConfigurationManager.AppSettings["OthersNeedHelpFormId2"];
+            sUSAorOther = "Other"
            
         }
 
@@ -78,11 +81,13 @@ public partial class NeedHelp : System.Web.UI.Page
         {
             sbBodyTextString.AppendLine("AerClub Tier: " + Request.Form["_helpQueryAerClubDropDown"]);
             sbBodyTextString.AppendLine("AerClub Member ID: " + Request.Form["_helpQueryAerClubmembershipId"]);
+            sbBodyTextString.AppendLine("CountryACStatus: " sUSAorOther + Request.Form["_helpQueryAerClubDropDown"]);
         }
         else
         {
             sbBodyTextString.AppendLine("AerClub Tier: " + "");
             sbBodyTextString.AppendLine("AerClub Member ID: " + "");
+            sbBodyTextString.AppendLine("CountryACStatus: " + "");
 
         }
 
