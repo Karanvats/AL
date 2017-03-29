@@ -95,8 +95,8 @@ public partial class NeedHelp : System.Web.UI.Page
       
         string selectedCountry = Request.Form["_helpQueryCountryList"];
         MailMessage _helpMessage = new MailMessage();
-        //_helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
-        _helpMessage.From = new MailAddress("vats.karan@gmail.com");
+        _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
+        
         if (Request.Form["_helpQueryCountryList"] == "USA")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
