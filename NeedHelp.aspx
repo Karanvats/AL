@@ -354,7 +354,7 @@ textboxclass{
                 <tr>
                     <td>
                     <div class="input-container" >
-                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" required pattern="[0-9]{2,4}"   title="Aplhanumeric Allowed" style="width:260px"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" required pattern="[0-9]{3,4}"   title="3 or 4 digit flight number" style="width:260px"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
