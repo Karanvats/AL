@@ -72,7 +72,7 @@ public partial class NeedHelp : System.Web.UI.Page
         sbBodyTextString.AppendLine("PassengerTitle: " + _helpQuerySalutation.SelectedValue.ToString());
         sbBodyTextString.AppendLine("Passenger Given Name: " +Request.Form["helpQueryFirstName"]);
         sbBodyTextString.AppendLine("Passenger Last Name: " + Request.Form["helpQueryLastName"]);
-        sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
+	    sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
         string countrycode = _helpQueryTelephoneCode.SelectedValue;
         sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
         char[] delimiterChars = {  '(', ')' };
@@ -82,7 +82,7 @@ public partial class NeedHelp : System.Web.UI.Page
         {
             sbBodyTextString.AppendLine("AerClub Tier: " + Request.Form["_helpQueryAerClubDropDown"]);
             sbBodyTextString.AppendLine("AerClub Member ID: " + Request.Form["_helpQueryAerClubmembershipId"]);
-            sbBodyTextString.AppendLine("CountryACStatus: " sUSAorOther + Request.Form["_helpQueryAerClubDropDown"]);
+            sbBodyTextString.AppendLine("CountryACStatus: " + sUSAorOther + Request.Form["_helpQueryAerClubDropDown"]);
         }
         else
         {
