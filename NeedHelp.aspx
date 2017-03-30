@@ -312,7 +312,7 @@ textboxclass{
                </td>
                 <td>
                    <div class="input-container" >
-                    <input type="text" style="width:260px"  required pattern="[0-9]{10}" maxlength="10" title="International, national or local phone number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" style="width:260px"  required pattern="[0-9]{5}" maxlength="10" title="Please use Area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Telephone Number</label>
                     </div>
                
@@ -354,7 +354,7 @@ textboxclass{
                 <tr>
                     <td>
                     <div class="input-container" >
-                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width:260px" pattern="[0-9]{3,4})" title="3 or 4 digit flight number"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width:260px" required pattern="[0-9]{3,4}" title="3 or 4 digit flight number"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
@@ -423,9 +423,9 @@ textboxclass{
        </tr>
             
        </table>
-          <p>  Please do not enter any payment card details into any data fields such as credit / debit card numbers and / or security codes. </p>
+          <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
         <div>
-            <table>
+            <table width="100%">
                   <tr>
                 <td>
               <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
@@ -434,7 +434,9 @@ textboxclass{
                   <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
                 </td>
                 </tr>
-                 <tr><td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td></tr>
+                 <tr>
+			<td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td>
+		</tr>
 
                 <tr>
                     <td colspan="3">
