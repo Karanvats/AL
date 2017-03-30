@@ -388,7 +388,7 @@ textboxclass{
                  <td>&nbsp</td>
              </tr>
              <tr>
-             <td> <h2 class="xl2 tealGreen"> How can we help ? </h2</td>
+             <td> <h2 class="xl2 tealGreen"> How can we help? </h2</td>
             </tr>
             
                 <tr>
