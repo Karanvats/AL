@@ -49,7 +49,7 @@ span{
     </style>
 </head>
     <body style="align-items:center">
-        <div  style="align-content:center;width:600px;height:150px;border:2px solid #73AD21 ; background-color:#f0f0f0;border-radius:10px;align-content:center">
+        <div  style="align-content:center;width:600px;height:150px;border:2px solid #73AD21 ; background-color:#F8FDEC;border-radius:10px;align-content:center">
             <table>
                 <tr><td>
             <table >
@@ -62,13 +62,19 @@ span{
                         <table >
                             <tr><td style="padding-bottom:20px" class="auto-style2" ><span class="tealGreen xxl">Help Request Sent Successfully</span></td></tr>
                             <tr><td class="auto-style2" style="padding-bottom:20px"><span class="tealGreen xsmall-table">Thank You</span></td></tr>
-                            <tr><td class="auto-style2" style="padding-bottom:20px"><span class="tealGreen xsmall-table">Your Help Request has been Sent Successfully</span></td></tr>
+                            <tr><td class="auto-style2" style="padding-bottom:20px">
+                               
+                                <span class="tealGreen xsmall-table">Your Help Request has been Sent Successfully</span></td></tr>
                         </table>
                     </td>
                    
                     </tr>
             </table>
-                    </td><td  style="vertical-align:top;" class="auto-style1"><a id="crossbutton" href="NeedHelp.aspx" style="margin:8px;width:20px;height:20px">&#10006;</a></td></tr>
+                    </td><td  style="vertical-align:top;padding-top:8px" class="auto-style1">
+                         <a href="NeedHelp.aspx" class="button circle circle-xs float-right circle-x button-gray" >
+                                <span class="icon"  data-icon="&times"></span>
+                                 </a>
+                       
                 </table>
              
         </div>
