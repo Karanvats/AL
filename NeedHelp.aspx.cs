@@ -62,7 +62,7 @@ public partial class NeedHelp : System.Web.UI.Page
         sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
         sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
-        sbBodyTextString.AppendLine("Request Number: " + Request.Form["_helpQueryFlightNumber"]);
+        sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         sbBodyTextString.AppendLine("Query Type: " + _helpQueryTypeDropDownList.SelectedItem.ToString());
         sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
