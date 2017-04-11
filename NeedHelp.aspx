@@ -312,7 +312,7 @@ textboxclass{
                </td>
                 <td>
                    <div class="input-container" >
-                    <input type="text" style="width:260px"  required pattern="[0-9]{5}" maxlength="10" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" style="width:260px"  required pattern="[0-9]{5,10}" maxlength="10" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Telephone Number</label>
                     </div>
                
@@ -370,14 +370,14 @@ textboxclass{
                               );
                             </script>
                     <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Select Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Select Date" runat="server"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Select Flight Date" runat="server"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
 
                 <tr>
                    <td>
                     <div class="input-container" >
-                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  required pattern="^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  pattern="^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label"  onblur="checkvalue(this)">
 
                     <label class="form-control-label">Booking Reference #</label>
                     </div>
