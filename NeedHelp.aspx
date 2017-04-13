@@ -446,7 +446,7 @@ textboxclass{
                         <asp:FileUpload ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
                     </td>
                 </tr>
-                <tr><td><font  face="ARIAL" size="1" >Maximum size limit 2 MB</font></td></tr>
+                <tr><td><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
             </table>
         </div>
         
@@ -606,7 +606,7 @@ textboxclass{
 
     </script>
                         <script type="text/javascript">
-                            var validFileSize = 2 * 1024 * 1024;
+                            var validFileSize = 5 * 1024 * 1024;
 
                             function CheckFileSize(file) {
                                 /*global document: false */
