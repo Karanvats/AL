@@ -312,7 +312,7 @@ textboxclass{
                </td>
                 <td>
                    <div class="input-container" >
-                    <input type="text" style="width:260px"  required pattern="[0-9]{5-10}" maxlength="10" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" style="width:260px"  required pattern="[0-9]{5-12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Telephone Number</label>
                     </div>
                
