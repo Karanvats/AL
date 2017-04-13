@@ -263,7 +263,7 @@ textboxclass{
                  
 
               </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="SalutationValidator" ControlToValidate="_helpQuerySalutation" InitialValue="Selected" runat="server" ValidationGroup="Submit"/>
+               
               </td>
                 <td>
                  <div class="input-container" >
@@ -369,15 +369,15 @@ textboxclass{
                                  }
                               );
                             </script>
-                    <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Select Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Select Date" runat="server"></asp:RequiredFieldValidator>
+                    <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight" Date" runat="server"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
 
                 <tr>
                    <td>
                     <div class="input-container" >
-                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  required pattern="^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  pattern="^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)">
 
                     <label class="form-control-label">Booking Reference #</label>
                     </div>
