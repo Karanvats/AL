@@ -13,9 +13,15 @@
   <Description>
     <ID value="Add Frequent Flyer Number"></ID>
   </Description>
+    <Description>
+    <ID value="Other"></ID>
+  </Description>
   
   <Info >
     <ID value="What are your Fare Rules"></ID>
+  </Info>
+  <Info >
+    <ID value="My new code"></ID>
   </Info>
   <Info >
     <ID value="Visa or Passport Requirements"></ID>
@@ -47,6 +53,9 @@
   </WebIssue>
   <WebIssue >
     <ID value="Check-In"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Other"></ID>
   </WebIssue>
 </HelpType>
 

@@ -282,7 +282,7 @@ textboxclass{
                 <td colspan="3">
                     <div class="input-container" >
                     <input  type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width:360px"  class="form-control inline-label"  required="required" onblur="checkvalue(this)">
-                    <label class="form-control-label">Email ID</label>
+                    <label class="form-control-label">Email Address</label>
                     </div>
               
                   <div class="input-container" >
