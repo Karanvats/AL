@@ -38,15 +38,8 @@ label{
   border-width: 1px;
 /*  default styles for the input  */
   display: block;
-  border-radius: 0;
-  -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,0.0);
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  width: 1.6;
-  height: .45;
-  padding: 24px 2px 8px;
-  border: solid #d3d3d3;
-  border-width:.02px
-}
+  padding: 19px 2px 3px;
+ }
 
 select{
      border: solid  #d3d3d3;
