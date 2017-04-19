@@ -346,7 +346,7 @@ textboxclass{
                 <tr>
                     <td>
                     <div class="input-container" >
-                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width:260px" required pattern="[0-9]{3,4}" title="3 or 4 digit flight number"  class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width:260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number"  class="form-control inline-label" onblur="checkvalue(this)">
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
@@ -388,9 +388,11 @@ textboxclass{
                          
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
                             <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
-                            <asp:ListItem Text="Need Help" Value="I"></asp:ListItem>
                             <asp:ListItem Text="Need Information" Value="H"></asp:ListItem>
+                            <asp:ListItem Text="Need Help with a Booking" Value="I"></asp:ListItem>
+                            <asp:ListItem Text="Request a Receipt" Value="R"></asp:ListItem>
                             <asp:ListItem Text="Website Issue" Value="W"></asp:ListItem>
+                            <asp:ListItem Text="Other" Value="O"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Default" runat="server"/>
                     </td>
