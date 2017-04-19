@@ -369,7 +369,7 @@ textboxclass{
                 <tr>
                    <td>
                     <div class="input-container" >
-                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  pattern="^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)">
+                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  pattern="^[2][0-9a-zA-Z]*$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)">
 
                     <label class="form-control-label">Booking Reference #</label>
                     </div>
