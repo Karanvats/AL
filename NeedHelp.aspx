@@ -38,15 +38,8 @@ label{
   border-width: 1px;
 /*  default styles for the input  */
   display: block;
-  border-radius: 0;
-  -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,0.0);
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  width: 1.6;
-  height: .45;
-  padding: 24px 2px 8px;
-  border: solid #d3d3d3;
-  border-width:.02px
-}
+  padding: 19px 2px 3px;
+ }
 
 select{
      border: solid  #d3d3d3;
@@ -312,7 +305,7 @@ textboxclass{
                </td>
                 <td>
                    <div class="input-container" >
-                    <input type="text" style="width:260px"  required pattern="[0-9]{5-12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" style="width:260px"  required pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">Telephone Number</label>
                     </div>
                
