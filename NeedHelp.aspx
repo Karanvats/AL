@@ -575,24 +575,29 @@ textboxclass{
               $("#_helpQueryDefList").attr("Disabled", true);
           }
 
-          if (this.value == "H") {
-              
-              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Info');
-
-             
+          if (this.value == "H") 
+          {   
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Info'); 
           }
 
-          if (this.value == "I") {
-
+          if (this.value == "I") 
+          {
               setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Description');
-
-
           }
+
+          if (this.value == "R") 
+          {
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Receipt');
+          }
+          
           if(this.value == "W")
           {
               setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'WebIssue');
+          }
 
-
+          if(this.value == "O")
+          {
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Other');
           }
 
          
@@ -611,7 +616,7 @@ textboxclass{
                                 }
                                 else {
                                     file.value = null;
-                                    alert("File Size Should be Greater than 0 and less than 2 MB.");
+                                    alert("File Size Should be Greater than 0 and less than 5 MB.");
                                 }
                                 return isValidFile;
                             }

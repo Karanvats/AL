@@ -1,18 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <HelpType>
   
+  <Description>
+    <ID value="Add a Dietary Meal"></ID>
+  </Description>
+  <Description>
+    <ID value="Add Frequent Flyer Number"></ID>
+  </Description>  
   <Description >
     <ID value="Assign,Change or Confirm Seat"></ID>
   </Description>
   <Description >
-    <ID value="Request a Receipt"></ID>
-  </Description>
-  <Description >
     <ID value="Resend Email Confirmation"></ID>
   </Description>
-  <Description>
-    <ID value="Add Frequent Flyer Number"></ID>
+  <Description >
+    <ID value="Schedule Change"></ID>
   </Description>
+  <Description >
+    <ID value="Wheelchair Assistance"></ID>
+  </Description>
+
+  <Receipt >
+    <ID value="Information for Insurance"></ID>
+  </Receipt>
+  <Receipt >
+    <ID value="Property Irregularity Report"></ID>
+  </Receipt>
+  <Receipt >
+    <ID value="Cancellation Invoice"></ID>
+  </Receipt>
+  <Receipt >
+    <ID value="Summary Invoice"></ID>
+  </Receipt>
+
   
   <Info >
     <ID value="What's my baggage allowance"></ID>
@@ -21,35 +41,39 @@
     <ID value="What are your Fare Rules"></ID>
   </Info>
   <Info >
-    <ID value="Visa or Passport Requirements"></ID>
-  </Info>
-  <Info >
     <ID value="Inflight Services"></ID>
   </Info>
   <Info>
     <ID value="Question on Airport/Lounges"></ID>
   </Info>
   <Info >
-    <ID value="Other"></ID>
+    <ID value="Visa or Passport Requirements"></ID>
   </Info>
 
-  <WebIssue >
-    <ID value="Adding Seats Online"></ID>
-  </WebIssue>
+
   <WebIssue >
     <ID value="Adding Meals"></ID>
   </WebIssue>
   <WebIssue >
-    <ID value="Changing Itinerary"></ID>
+    <ID value="Adding Seats Online"></ID>
   </WebIssue>
   <WebIssue>
     <ID value="Availability of fares"></ID>
   </WebIssue>
   <WebIssue >
-    <ID value="Pricelock"></ID>
+    <ID value="Changing Itinerary"></ID>
   </WebIssue>
   <WebIssue >
     <ID value="Check-In"></ID>
   </WebIssue>
+  <WebIssue >
+    <ID value="Unable to complete Booking"></ID>
+  </WebIssue>
+
+  <Other >
+    <ID value="General Travel Query"></ID>
+  </Other>
+  
+
 </HelpType>
 
