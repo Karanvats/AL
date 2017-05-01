@@ -210,7 +210,7 @@ textboxclass{
     <form id="_helpQueryForm"  runat="server" autocomplete="off" >
         <div>
     
-        <div style="margin-left: 80px; margin-right: 172px;width:auto;height:auto;margin-top:260px"  class="gray-12-bg ">
+        <div style="margin-left: 80px; margin-right: 172px;width:824;height:auto;margin-top:260px"  class="gray-12-bg ">
             <div style="margin-left: 30px" >
                  <br />
               
