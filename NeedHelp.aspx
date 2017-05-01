@@ -202,35 +202,7 @@ textboxclass{
 <body>
   
    
-    <div id="HeaderInfo" >
-        <br />
-        <p style="text-align: left">
-            <font color="#008870" face="ARIAL" size="6"><b>How can we help?</b></font>
-        </p>
-    </div>
-        
-    <br />
-    <span  class=" col-xs-12 tealGreenDark">
-       We are sorry you couldn't find the answers to your questions on our website, or make any necessary changes to your booking in  Manage Trip. <br />
-        <br />
-       Please allow up to 48 hours for a response.
-<br /><br />
-        
-        To request other types of assistance please go to:
-        <br />
-         <a href="https://www.aerlingus.com/support/customer-relations/">Disability Assistance </a><br />
-         <a href="https://www.aerlingus.com/support/customer-relations/">Special Meal Request</a><br />
-        <a href="https://www.aerlingus.com/support/customer-relations/">Refund Request</a> <br />
-        <br />
-        
-            
-                    Or to update an additional query go to: <a href="Default.aspx"> Update Webform</a>
-
-            <br />
-       
-      
-    <br />
-    </span>
+    
    
     <div id="page1" data-role="page">
     <form id="_helpQueryForm"  runat="server" autocomplete="off" >
@@ -242,7 +214,7 @@ textboxclass{
               
                 
       
-                <h2 class="xl2 tealGreen"> Tell Us about Yourself</h2>
+                <h2 class="xl2 tealGreen"> Contact Information</h2>
          <table >
              
             <tr>
@@ -265,8 +237,8 @@ textboxclass{
               </td>
                 <td>
                 <div class="input-container" >
-                 <input type="text" style="width:260px" id="helpQueryLastName" title="Please Enter your Last Name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)">
-                 <label class="form-control-label">Last Name</label>
+                 <input type="text" style="width:260px" id="helpQueryLastName" title="Please Enter your Family Name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                 <label class="form-control-label">Family Name</label>
                 </div>
             </td>
             </tr>
@@ -279,7 +251,7 @@ textboxclass{
               
                   <div class="input-container" >
                     <input type="email" name="email" id="email" style="width:360px"  class="form-control inline-label" required="required" onblur="checkvalue(this)" >
-                    <label class="form-control-label">Confirm Email</label>
+                    <label class="form-control-label">Confirm Email Address</label>
                     </div>
             </td>
             </tr>
@@ -315,7 +287,7 @@ textboxclass{
              <tr>
                  <td class="auto-style1">
                        <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server"    >
-                            <option value="Selected" selected="selected">AerClub Status</option>
+                            <option value="Selected" selected="selected">AerClub Tier</option>
                             <option value="Concierge" >Concierge</option>
                             <option value="Platinum">Platinum</option>
                             <option value="Silver" >Silver</option>
@@ -339,7 +311,7 @@ textboxclass{
              </tr>
           <tr>
               <td>
-                         <h2 class="xl2 tealGreen"> Travel Information</h2>
+                         <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
 
                   </td>
         </tr>
@@ -371,7 +343,7 @@ textboxclass{
                     <div class="input-container" >
                      <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  pattern="^[2][0-9a-zA-Z]*$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)">
 
-                    <label class="form-control-label">Booking Reference #</label>
+                    <label class="form-control-label">Booking Reference</label>
                     </div>
                      
                     </td>
