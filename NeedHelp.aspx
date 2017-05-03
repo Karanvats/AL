@@ -210,7 +210,7 @@ textboxclass{
     <form id="_helpQueryForm"  runat="server" autocomplete="off" >
         <div>
     
-        <div style="margin-left: 80px; margin-right: 172px;width:824;height:auto;margin-top:260px"  class="gray-12-bg ">
+        <div style="margin-left: 80px; margin-right: 172px;width:824;height:auto;margin-top:10px"  class="gray-12-bg ">
             <div style="margin-left: 30px" >
                  <br />
               
@@ -299,8 +299,8 @@ textboxclass{
                  </td>
                  <td class="auto-style1">
                     <div class="input-container" >
-                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display:none;width:260px" pattern="[0-9]{16}" required title="Please Enter your 16 Digit Membership ID"  disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)">
-                    <label class="form-control-label">AerClub # (16 numeric characters only)</label>
+                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display:none;width:260px" pattern="[0-9]{16}" required title="Please Enter your 16 Digit AerClub Membership Number"  disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)">
+                    <label class="form-control-label">AerClub Membership Number</label>
                     </div>
                      
                  </td> 
@@ -312,7 +312,7 @@ textboxclass{
                  <td>&nbsp</td>
              </tr>
           <tr>
-              <td>
+              <td colspan="2">
                          <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
 
                   </td>
