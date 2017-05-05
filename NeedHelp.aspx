@@ -233,13 +233,13 @@ textboxclass{
               </td>
                 <td>
                  <div class="input-container" >
-                 <input type="text" style="width:260px" id="helpQueryFirstName" name="helpQueryFirstName"  class="form-control inline-label  " required="required" onblur="checkvalue(this)">
+                 <input type="text" style="width:260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName"  class="form-control inline-label  " required="required" onblur="checkvalue(this)">
                     <label class="form-control-label">First Name</label>
                     </div>
               </td>
                 <td>
                 <div class="input-container" >
-                 <input type="text" style="width:260px" id="helpQueryLastName" title="Please Enter your Family Name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                 <input type="text" style="width:260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)">
                  <label class="form-control-label">Family Name</label>
                 </div>
             </td>
@@ -266,7 +266,10 @@ textboxclass{
                         </select>
                   
                     </div>
-                 
+                 <asp:CustomValidator ID="CountryValidator" runat="server" 
+                            ErrorMessage="Required" ControlToValidate="_helpQueryCountryList" 
+                            ClientValidationFunction="ValidateTextBox" ValidateEmptyText=True CssClass="Required" SetFocusOnError="True">
+                </asp:CustomValidator>
              </td>
              </tr>
             <tr>
@@ -343,7 +346,7 @@ textboxclass{
                 <tr>
                    <td>
                     <div class="input-container" >
-                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  pattern="^[2][0-9a-zA-Z]*$" maxlength="6" title="Must contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)">
+                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)">
 
                     <label class="form-control-label">Booking Reference</label>
                     </div>
