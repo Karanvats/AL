@@ -266,10 +266,6 @@ textboxclass{
                         </select>
                   
                     </div>
-                 <asp:CustomValidator ID="CountryValidator" runat="server" 
-                            ErrorMessage="Required" ControlToValidate="_helpQueryCountryList" 
-                            ClientValidationFunction="ValidateTextBox" ValidateEmptyText=True CssClass="Required" SetFocusOnError="True">
-                </asp:CustomValidator>
              </td>
              </tr>
             <tr>
