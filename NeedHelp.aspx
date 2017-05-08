@@ -261,7 +261,7 @@ textboxclass{
              <td>
                   <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
                   <div class="input-container" >
-                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left">
+                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required>
                         
                         </select>
                   
@@ -367,12 +367,12 @@ textboxclass{
                             <asp:ListItem Text="Website Issue" Value="W"></asp:ListItem>
                             <asp:ListItem Text="Other" Value="O"></asp:ListItem>
                         </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Default" runat="server"/>
+                        <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Selected" runat="server"/>
                     </td>
                     <td>
                    
-                        <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" >
-                             <option value="Selected" selected="selected">-- Please Select --</option>
+                        <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required>
+                             <option value="" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
                     </td>
